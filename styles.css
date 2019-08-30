@@ -1,0 +1,73 @@
+#titulo
+{
+color: #FF0000;
+}
+
+
+.texto
+{
+background-color: grey
+
+}
+
+#calc{
+position:relative;
+width: 188px;
+height: 247px;
+margin:0px auto 0px auto;
+background-color: red;
+}
+
+#calc-top, #calc-middle, #calc-button
+
+{
+  position:relative;
+  width: 188px;
+}
+
+#calc-top{
+height: 10px;
+background: url('./TN/img/calc-top.png');
+}
+
+#calc-middle{
+height: 230px;
+background: url('./TN/img/calc-middle.png');
+}
+
+#calc-button{
+height: 10px;
+background: url('./TN/img/calc-bottom.png');
+}
+
+#display{
+
+  position: relative;
+  width: 141px;
+  height: 40px;
+  padding: 5px;
+  margin: 0 auto;
+  background: url('./TN/img/calc-display.png');
+}
+
+#buttons{
+  position: relative;
+  width: 152px;
+  margin: 0 auto;
+
+}
+
+#buttons ul li.button {
+  position: relative;
+  width: 34px;
+  height: 22px;
+  padding-top: 5px;
+  margin: 2px;
+  background: url('./TN/img/calc-button.png');
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Lucida console", Monaco, monospace;
+  list-style-type: none;
+  float: left;
+}
