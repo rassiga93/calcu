@@ -10,17 +10,20 @@ window.onload = function() {
   const display = document.getElementById("display")
 	const btnOne = document.getElementById("btoOne")
 	const btnTwo = document.getElementById("btoTwo")
-	const btnThree = document.getElementById("btoThr")
-	const btnFour = document.getElementById("btoFou")
-	const btnFive = document.getElementById("btoFiv")
+	const btnThr = document.getElementById("btoThr")
+	const btnFou = document.getElementById("btoFou")
+	const btnFiv = document.getElementById("btoFiv")
 	const btnSix = document.getElementById("btoSix")
-	const btnSeven = document.getElementById("btoSev")
-	const btnEight = document.getElementById("btoEig")
-	const btnNine = document.getElementById("btoNin")
-	const btnZero = document.getElementById("btoZer")
-  const btnDiv = document.getElementById("btnDiv")
-	const btnMule = document.getElementById("btnMul")
-	const btnSub = document.getElementById("btnSub")
+	const btnSev = document.getElementById("btoSev")
+	const btnEig = document.getElementById("btoEig")
+	const btnNin = document.getElementById("btoNin")
+	const btnZer = document.getElementById("btoZer")
+  const btnDiv = document.getElementById("btoDiv")
+  const btnSum = document.getElementById("btoSum")
+	const btnMul = document.getElementById("btoMul")
+	const btnSub = document.getElementById("btoSub")
+  const btnC = document.getElementById("btoC")
+  const btnEqu = document.getElementById("btoEqu")
 
 
   const numberOnClick = function(event) {
@@ -43,11 +46,11 @@ window.onload = function() {
     display.innerText = ""
   }
 
-const operatorFuction = fuction(event){
+const operatorFunction = function(event){
   firstValue = parseFloat(display.innerText)
   display.innerText =""
   selectedOperator = event.target.textContent
-  console.log("firsvalue", firsvalue)
+  console.log("firsvalue", firstValue)
   console.log ("selectedOperator", selectedOperator)
 
   }
@@ -58,25 +61,26 @@ const operatorFuction = fuction(event){
 	btnSub.onclick = operatorFunction
 
 btnEqu.onclick = function(event){
-  secondValue= parseFloat(event.target.textContent)
+  secondValue= parseFloat(display.innerText)
   let result
   switch (selectedOperator) {
     case '+':
-      result = firsvalue + secondValue
+      result = firstValue + secondValue
       break;
 
     case'-':
-      result = firsvalue - secondValue
+      result = firstValue - secondValue
       break;
 
     case '/':
-      result = firsvalue / secondValue
+      result = firstValue / secondValue
     break;
 
     case '*':
-      result = firsvalue * secondValue
+      result = firstValue * secondValue
     break;
     default:
+      break;
       }
       display.innerText = result
 }
