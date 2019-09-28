@@ -49,7 +49,7 @@ window.onload = function() {
 const operatorFunction = function(event){
   firstValue = parseFloat(display.innerText)
   display.innerText =""
-  selectedOperator = event.target.textContent
+  selectedOperator = event.target.textContent.replace("/","AA")
   console.log("firsvalue", firstValue)
   console.log ("selectedOperator", selectedOperator)
 
@@ -68,17 +68,48 @@ secondValue= parseFloat(display.innerText)
     method: "get",
     headers: {
       "Content-Type": "application/json",
-    },
+    }
   }
-  fetch(`http://localhost:3000/getresult/${firstValue}/${secondValue}/${selectedOperator}`, options)
-  .then(res => res.json())
-  .then((response)=> {
-    console.log(response.result)
-    display.innerText = response.result
-  })
+  switch (selectedOperator) {
+    case '+':
+    fetch(`http://localhost:3000/suma/${firstValue}/${secondValue}/${selectedOperator}`, options)
+    .then(res => res.json())
+    .then((response)=> {
+      console.log('llamado HTTP',response.result)
+      display.innerText = response.result
+    })
+      break;
 
+    case'-':
+    fetch(`http://localhost:3000/resta/${firstValue}/${secondValue}/${selectedOperator}`, options)
+    .then(res => res.json())
+    .then((response)=> {
+      console.log('llamado HTTP',response.result)
+      display.innerText = response.result
+    })
+      break;
+
+    case 'AA':
+    fetch(`http://localhost:3000/division/${firstValue}/${secondValue}/${selectedOperator}`, options)
+    .then(res => res.json())
+    .then((response)=> {
+      console.log('llamado HTTP',response.result)
+      display.innerText = response.result
+    })
+    break;
+
+    case '*':
+    fetch(`http://localhost:3000/multiplicacion/${firstValue}/${secondValue}/${selectedOperator}`, options)
+    .then(res => res.json())
+    .then((response)=> {
+      console.log('llamado HTTP',response.result)
+      display.innerText = response.result
+    })
+    break;
+    default:
+      break;
 
 
 }
-
+}
 }
